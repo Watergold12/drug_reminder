@@ -369,22 +369,14 @@ class DrugRemainder:
         if self.config.get("sound_enabled"):
             self.sound.play(str(SOUND_DIR / "pill_alert.wav"))
 
-        # Send notification with actions in a separate thread
-        def _notify_with_actions():
-            action = self.notifier.send(
-                title=title,
-                body=body,
-                urgency="normal",
-                icon=icon,
-                actions=[("take", "💊 Take Dose"), ("snooze", "⏰ Snooze")],
-            )
-            if action == "take":
-                self.acknowledge_dose(hour)
-            elif action == "snooze":
-                self._snooze_dose(hour)
-
-        thread = threading.Thread(target=_notify_with_actions, daemon=True)
-        thread.start()
+        alert_data = {
+            "active": True,
+            "hour": hour,
+            "title": title,
+            "body": body,
+            "level": 1
+        }
+        save_json(DATA_DIR / "current_alert.json", alert_data)
 
         self.log.mark_scheduled(hour)
 
@@ -438,24 +430,21 @@ class DrugRemainder:
         if self.config.get("sound_enabled") and level >= 2:
             self.sound.play(str(SOUND_DIR / "critical_dose.wav"))
 
-        def _notify_escalation():
-            action = self.notifier.send(
-                title=title,
-                body=msg,
-                urgency=urgency,
-                icon=icon,
-                actions=[("take", "💊 Take Dose NOW"), ("snooze", f"😤 Fine, {self.config.get('snooze_duration_min', 15)} more")],
-            )
-            if action == "take":
-                self.acknowledge_dose(hour)
-            elif action == "snooze":
-                self._snooze_dose(hour)
-
-        thread = threading.Thread(target=_notify_escalation, daemon=True)
-        thread.start()
+        alert_data = {
+            "active": True,
+            "hour": hour,
+            "title": title,
+            "body": msg,
+            "level": level
+        }
+        save_json(DATA_DIR / "current_alert.json", alert_data)
 
     def _snooze_dose(self, hour: int):
         """Snooze a dose reminder."""
+        alert_file = DATA_DIR / "current_alert.json"
+        if alert_file.exists():
+            alert_file.unlink()
+
         snooze_min = self.config.get("snooze_duration_min", 15)
         print(f"[SNOOZE] Dose for {hour:02d}:00 snoozed for {snooze_min} minutes.")
 
@@ -469,6 +458,10 @@ class DrugRemainder:
 
     def acknowledge_dose(self, hour: int):
         """Mark a dose as taken, log it, check achievements."""
+        alert_file = DATA_DIR / "current_alert.json"
+        if alert_file.exists():
+            alert_file.unlink()
+
         self.log.mark_taken(hour)
         print(f"[DOSE TAKEN] {hour:02d}:00 acknowledged at {datetime.now().strftime('%H:%M:%S')}")
 
@@ -616,12 +609,14 @@ class DrugRemainder:
         print()
 
         # Also send as notification
-        self.notifier.send_fire_and_forget(
-            title="🔥 ROAST — You Asked For This",
-            body=msg,
-            urgency="critical",
-            icon=str(ICON_PATH) if ICON_PATH.exists() else None,
-        )
+        alert_data = {
+            "active": True,
+            "hour": 99,
+            "title": "🔥 ROAST — You Asked For This",
+            "body": msg,
+            "level": 3
+        }
+        save_json(DATA_DIR / "current_alert.json", alert_data)
 
     def _maybe_print_side_effect(self):
         effect = self._maybe_side_effect()
@@ -756,17 +751,21 @@ def main():
         print("Sending test notification...")
         msg = app._pick_message()
         drug = app._get_drug_name()
-        Notifier.send_fire_and_forget(
-            title=f"💊 Drug Remainder — Test ({drug})",
-            body=msg,
-            urgency="normal",
-            icon=str(ICON_PATH) if ICON_PATH.exists() else None,
-        )
+        alert_data = {
+            "active": True,
+            "hour": 99,
+            "title": f"💊 Drug Remainder — Test ({drug})",
+            "body": msg,
+            "level": 1
+        }
+        save_json(DATA_DIR / "current_alert.json", alert_data)
         print(f"✅ Sent! Message: \"{msg}\"")
     elif args.snooze is not None:
         print(f"⏰ Snoozing for {args.snooze} minutes...")
-        # This would interact with a running daemon via IPC in a full implementation
-        print("(Note: Snooze works best when the daemon is running via systemd.)")
+        alert_file = DATA_DIR / "current_alert.json"
+        if alert_file.exists():
+            alert_file.unlink()
+        print("Alert cleared. Daemon will re-escalate automatically.")
     else:
         # No flags — start the daemon
         app.run()

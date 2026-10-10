@@ -1,0 +1,16 @@
+{
+  "unlocked": {
+    "first_sip": {
+      "date": "2026-10-10T16:11:03.761311",
+      "name": "First Sip",
+      "badge": "\ud83c\udf7c"
+    },
+    "camel_mode": {
+      "date": "2026-10-10T16:11:03.761400",
+      "name": "Camel Mode",
+      "badge": "\ud83d\udc2a"
+    }
+  },
+  "streak": 0,
+  "best_streak": 0
+}

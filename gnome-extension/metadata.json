@@ -1,0 +1,11 @@
+{
+  "name": "Drug Remainder",
+  "description": "Hydration Prescription Service. Reminds you to drink water.",
+  "uuid": "drug-remainder@mcrae",
+  "shell-version": [
+    "45",
+    "46",
+    "47",
+    "50"
+  ]
+}
