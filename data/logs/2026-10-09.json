@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-09",
+  "doses_taken": {},
+  "doses_missed": [],
+  "escalation_levels": {
+    "6": 3,
+    "8": 3,
+    "10": 3,
+    "12": 3,
+    "14": 3,
+    "16": 3,
+    "18": 3
+  },
+  "total_taken": 0,
+  "total_scheduled": 1
+}

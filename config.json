@@ -1,0 +1,27 @@
+{
+  "patient_name": "mcrae",
+  "schedule_hours": [6, 8, 10, 12, 14, 16, 18, 20, 22],
+  "dose_labels": {
+    "6": "Morning Primer",
+    "8": "Breakfast Dose",
+    "10": "Mid-Morning Hit",
+    "12": "Noon Prescription",
+    "14": "Afternoon Fix",
+    "16": "Evening Supplement",
+    "18": "Sunset Therapy",
+    "20": "Night Cap Dose",
+    "22": "Final Dose"
+  },
+  "escalation_enabled": true,
+  "escalation_intervals_min": [15, 30, 45],
+  "sound_enabled": true,
+  "wallpaper_escalation": false,
+  "snooze_duration_min": 15,
+  "message_weights": {
+    "pharmacist": 30,
+    "guilt_trip": 25,
+    "dramatic": 20,
+    "passive_aggressive": 15,
+    "wholesome": 10
+  }
+}

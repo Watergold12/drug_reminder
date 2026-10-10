@@ -1,0 +1,108 @@
+{
+  "pharmacist": [
+    "⏰ PRESCRIPTION ALERT: Your H₂O has been dispensed. Take 250ml orally. No excuses.",
+    "Dr. Hydration here. Your bloodstream called — it's running on fumes. Take your meds.",
+    "Refill notice: Your body's water reserves are critically low. Insurance doesn't cover camel mode.",
+    "This is your pharmacist speaking. Take your water. Side effects of skipping: headache, crankiness, and looking like a raisin.",
+    "Your prescription for Hydrocure™ 500ml is ready for pickup at the nearest tap.",
+    "Pharmacy notification: Your AquaRX refill is overdue. Do not operate heavy machinery while dehydrated.",
+    "Clinical advisory: Administer one glass of DiHydrogen Monoxide immediately. This is not optional.",
+    "Patient chart shows zero water intake this cycle. Prescribing an emergency dose of H₂O Extended Release."
+  ],
+  "guilt_trip": [
+    "Your kidneys filed a complaint. They said, and I quote: 'We're drowning in toxins, not water.' Drink up.",
+    "Fun fact: You're 60% water. At this rate, you're down to 40%. You're becoming beef jerky.",
+    "Your houseplants get watered more consistently than you water yourself. Let that sink in.",
+    "The Sahara Desert called. It wants its hydration strategy back.",
+    "Your cells are literally shriveling while you read this. They're too dehydrated to even cry for help.",
+    "Somewhere, a cactus is looking at your hydration habits and feeling superior.",
+    "Your body sent a distress signal. It was too dry to be a tear, so it came out as a croak.",
+    "Even camels drink water. You're making camels look like hydration influencers."
+  ],
+  "dramatic": [
+    "🚨 CODE BLUE: Hydration levels critical. This is not a drill. DRINK. WATER. NOW.",
+    "BREAKING NEWS: Local developer found fossilized at desk. Cause of death: stubbornness and zero glasses of water.",
+    "If this were a video game, your health bar just turned red. Drink water or game over.",
+    "You are 1 skipped glass away from your blood type changing to 'dust'.",
+    "EMERGENCY BROADCAST: A dehydration crisis has been detected in your vicinity. The victim is you.",
+    "ALERT: Your body's drought level has been upgraded from 'concerning' to 'archaeological'.",
+    "This is your final warning before your organs start writing resignation letters.",
+    "⚠️ CRITICAL: Water levels below minimum. Systems entering emergency conservation mode."
+  ],
+  "passive_aggressive": [
+    "Oh, you're busy? Cool. Your organs are busy too — busy shutting down. But sure, finish that one more line of code.",
+    "No pressure, but the last time you drank water, dinosaurs roamed the earth.",
+    "I'm not saying you're dehydrated, but your lips just filed for refugee status.",
+    "Remember when you said 'I'll drink water later'? That was 4 hours ago. Later is NOW.",
+    "It's fine. Don't drink water. I'm sure your headache has nothing to do with it. Definitely not.",
+    "I would say you're running on empty, but that implies you were ever full. Drink. Water.",
+    "Don't mind me, just watching you slowly turn into a human crouton. No judgment.",
+    "Sure, keep ignoring me. Your skin's moisture barrier already unfriended you."
+  ],
+  "wholesome": [
+    "Hey, you're doing great. Just a gentle reminder to drink some water. You deserve to feel good. 💙",
+    "Proud of you for showing up today. Now show up for your body too — grab some water. 🥤",
+    "You matter, and so does your hydration. Take a water break — you've earned it. ✨",
+    "Quick check-in: You're awesome. Now be awesome AND hydrated. 💧"
+  ],
+  "escalation": [
+    "⚠️ MISSED DOSE ALERT: You were supposed to drink water. You didn't. We need to talk.",
+    "🚨 OVERDUE PRESCRIPTION: Your water dose is now {minutes} minutes late. This is going on your record.",
+    "I've been very patient. The water hasn't moved. You haven't moved toward it. Something has to give.",
+    "ESCALATION NOTICE: Your hydration non-compliance has been reported to upper management (your future self with a headache).",
+    "This is attempt #{level}. I have infinite patience and infinite sass. You will drink water eventually."
+  ],
+  "drug_names": [
+    "Hydrocure™",
+    "AquaRX",
+    "Waterin 500mg",
+    "DiHydrogen Monoxide Capsules",
+    "H₂O Extended Release",
+    "Liquidium",
+    "Aqua-Stat Pro",
+    "HydroMax Ultra"
+  ],
+  "side_effects": [
+    "Warning: Not taking this medication may cause symptoms including: being a dried mango, keyboard face imprints, and existential crisis.",
+    "Caution: Skipping doses may result in headaches, crankiness, and your skin aging faster than your browser tabs.",
+    "Side effects of non-compliance: fatigue, brain fog, and being judged by this notification.",
+    "FDA* Warning: Dehydration may cause irritability, confusion, and the inability to debug simple errors. (*Fake Drug Administration)"
+  ],
+  "achievements": {
+    "first_sip": {
+      "name": "First Sip",
+      "badge": "🍼",
+      "description": "Take your first dose. Everyone starts somewhere."
+    },
+    "hydro_homie": {
+      "name": "Hydro Homie",
+      "badge": "🏆",
+      "description": "Complete all doses in a day. You absolute legend."
+    },
+    "camel_mode": {
+      "name": "Camel Mode",
+      "badge": "🐪",
+      "description": "Miss 3+ doses in a day. Your spirit animal is a camel."
+    },
+    "desert_survivor": {
+      "name": "Desert Survivor",
+      "badge": "🏜️",
+      "description": "Go an entire day without acknowledging any dose. Impressive and concerning."
+    },
+    "streak_master": {
+      "name": "Streak Master",
+      "badge": "💎",
+      "description": "7-day perfect compliance. You're basically a water god."
+    },
+    "relapse": {
+      "name": "Relapse",
+      "badge": "💔",
+      "description": "Break a 3+ day streak. We were rooting for you."
+    },
+    "pharmacists_favorite": {
+      "name": "Pharmacist's Favorite",
+      "badge": "👨‍⚕️",
+      "description": "30-day perfect compliance. The pharmacist is openly weeping with pride."
+    }
+  }
+}

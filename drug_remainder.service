@@ -1,0 +1,15 @@
+[Unit]
+Description=Drug Remainder — Hydration Prescription Service
+Documentation=https://github.com/mcrae/drug_remainder
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/Projects/linux_extensions/drug_remainder/venv/bin/python3 %h/Projects/linux_extensions/drug_remainder/drug_remainder.py
+Restart=on-failure
+RestartSec=10
+Environment=DISPLAY=:0
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%U/bus
+
+[Install]
+WantedBy=default.target
